@@ -2,7 +2,7 @@
 在JavaScript中this可以是全局对象、当前对象或者任意对象，这完全取决于函数的调用方式，this 绑定的对象即函数执行的上下文环境（context）。
 
 #### 对象方法调用
-```
+```ecmascript 6
     // 作为对象方法调用
     const test = {
         f : function() {
@@ -14,7 +14,7 @@
 
 #### 函数调用
 1.
-```
+```ecmascript 6
     const a = 1;
     function test() {
         console.log(this.a);
@@ -22,7 +22,7 @@
     }
 ```
 2.
-```
+```ecmascript 6
     const test = {
         f : function() {
             function F() {
@@ -35,7 +35,7 @@
 ```
 
 ## hack写法改变上下文
-```
+```ecmascript 6
     const test = {
         f : function() {
             const self = this;  //这里this指向test
@@ -66,7 +66,7 @@
 
 说明：bind()方法所返回的函数的length（形参数量）等于原函数的形参数量减去传入bind()方法中的实参数量（第一个参数以后的所有参数），因为传入bind中的实参都会绑定到原函数的形参。
 
-```
+```ecmascript 6
     const test = {
         f : function() {
             const F = function() {
@@ -80,17 +80,17 @@
 ## 箭头函数this
 * 箭头函数里面的this，绑定定义时所在的作用域，而不是指向运行时所在的作用域
 * 不能更改this：this的值在函数内部不能被修改，在函数的整个生命周期内其值会保持不变。
-```
+```ecmascript 6
     const test = {
         f : function() {
             const F = () => {
                 console.log(this);      //这里this指向test
-            }
+            };
             F();
         }
     }
 ```
-```
+```ecmascript 6
     function foo() {
         setTimeout(function () {
             console.log('id:', this.id);
@@ -103,7 +103,7 @@
 
     foo.call({ id: 42 });
 ```
-```
+```ecmascript 6
     function foo() {
         setTimeout(() => {
             console.log('id:', this.id);
