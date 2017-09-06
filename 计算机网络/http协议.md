@@ -21,25 +21,24 @@
 
 Get请求例子：
 ```
-    GET /562f25980001b1b106000338.jpg HTTP/1.1
-    Host    img.mukewang.com
-    User-Agent    Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36
-    Accept    image/webp,image/*,*/*;q=0.8
-    Referer    http://www.imooc.com/
-    Accept-Encoding    gzip, deflate, sdch
-    Accept-Language    zh-CN,zh;q=0.8
+     GET /books/?sex=man&name=Professional HTTP/1.1
+     Host: www.example.com
+     User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.6)
+     Gecko/20050225 Firefox/1.0.1
+     Connection: Keep-Alive
 ```
 
 POST请求例子：
 ```
-    POST / HTTP1.1
-    Host:www.wrox.com
-    User-Agent:Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.50727; .NET CLR 3.0.04506.648; .NET CLR 3.5.21022)
-    Content-Type:application/x-www-form-urlencoded
-    Content-Length:40
-    Connection: Keep-Alive
-    
-    name=Professional%20Ajax&publisher=Wiley
+     POST / HTTP/1.1
+     Host: www.example.com
+     User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.6)
+     Gecko/20050225 Firefox/1.0.1
+     Content-Type: application/x-www-form-urlencoded
+     Content-Length: 40
+     Connection: Keep-Alive
+     
+     sex=man&name=Professional 
 ```
 
 #### HTTP响应Response
@@ -110,6 +109,7 @@ Web服务器解析请求，定位请求资源。服务器将资源复本写到TC
 
 客户端浏览器首先解析状态行，查看表明请求是否成功的状态代码。然后解析每一个响应头，响应头告知以下为若干字节的HTML文档和文档的字符集。客户端浏览器读取响应数据HTML，根据HTML的语法对其进行格式化，并在浏览器窗口中显示。
 
+
 ##### 例如：在浏览器地址栏键入URL，按下回车之后会经历以下流程：
 
 1. 浏览器向 DNS 服务器请求解析该 URL 中的域名所对应的 IP 地址;
@@ -145,7 +145,7 @@ POST:由于不是通过URL传值，理论上数据不受限。但实际各个WEB
 
 POST的安全性要比GET的安全性高。比如：通过GET提交数据，用户名和密码将明文出现在URL上，因为(1)登录页面有可能被浏览器缓存；(2)其他人查看浏览器的历史纪录，那么别人就可以拿到你的账号和密码了，除此之外，使用GET提交数据还可能会造成Cross-site request forgery攻击
 
-4. Http get,post,soap协议都是在http上运行的
+4. Http get,post协议都是在http上运行的
 
     1. get：请求参数是作为一个key/value对的序列（查询字符串）附加到URL上的
 查询字符串的长度受到web浏览器和web服务器的限制（如IE最多支持2048个字符），不适合传输大型数据集同时，它很不安全
@@ -153,5 +153,3 @@ POST的安全性要比GET的安全性高。比如：通过GET提交数据，用�
     2. post：请求参数是在http标题的一个不同部分（名为entity body）传输的，这一部分用来传输表单信息，因此必须将Content-type设置为:application/x-www-form- urlencoded。post设计用来支持web窗体上的用户字段，其参数也是作为key/value对传输。
 但是：它不支持复杂数据类型，因为post没有定义传输数据结构的语义和规则。
 
-    3. soap：是http post的一个专用版本，遵循一种特殊的xml消息格式
-Content-type设置为: text/xml 任何数据都可以xml化。
