@@ -16,7 +16,7 @@ css伪类应用：
     }
 ```
 
-1. 扩大可点击感应区域
+2. 扩大可点击感应区域
 ```css
     .btn {
         position: relative;
@@ -31,10 +31,11 @@ css伪类应用：
     }
 ```
 
-2. 利用伪类做对话框的三角形
+3. 利用伪类做对话框的三角形
 ```css
     .mn {
-        width: 100px;   height: 50px;
+        width: 100px;   
+        height: 50px;
         background: #fff1af;
         position: relative;
     }
