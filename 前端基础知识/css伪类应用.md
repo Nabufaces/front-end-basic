@@ -7,7 +7,6 @@ css伪类应用：
     }
     .btn::after {
         content: '';
-        content: '';
         position: absolute;
         top: -20px;
         right: -20px;
