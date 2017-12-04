@@ -1,11 +1,11 @@
-### 解决方案：
+## 解决方案：
 
-##### 1. 禁用缩放
+#### 1. 禁用缩放
 ```html
     <meta name="viewport" content="user-scalable=no">
 ```
 
-##### 2. CSS touch-action
+#### 2. CSS touch-action
 ```css
     .click {
         touch-action: manipulation;
@@ -15,6 +15,9 @@
     }
 ```
 
-##### 3. fastclick
+#### 3. fastclick核心
 
-https://segmentfault.com/a/1190000005850383
+> 通过touchstart,touchmove,touchend模拟click事件,而将300ms后的click事件给屏蔽掉
+ 
+1. IOS: 如果touchstart触发后马上就触发touchend，说明这是点击操作，此时触发click真正执行的事件。
+2. Android: 一些Android的设备屏幕很不灵敏，这种情况下一定会触发touchmove事件。所以针对Android设备的点击操作可以适当放宽，比如touchstart和touchend之间可以允许有少量几个touchmove，并且touchmove的距离不能超过多少个像素
