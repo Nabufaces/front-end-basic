@@ -9,14 +9,11 @@ const quickSort = arr => {
 
     arr.forEach((item) => {
         if(item < item_index) {
-        left.push(item)
-    } else {
-        right.push(item)
-    }
-})
+            left.push(item)
+        } else {
+            right.push(item)
+        }
+    })
 
     return quickSort(left).concat([item_index], quickSort(right))
 }
-
-const x = [1, 3, 2, 2, 5, 4];
-console.log(quickSort(x));
