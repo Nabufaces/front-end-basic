@@ -1,6 +1,10 @@
+/*
+    title: 找出数组重复元素
+*/
+
 const findDuplicated = (arr) => {
     if(!arr || arr.length < 2) {
-        return;
+        return [];
     }
     let map = {};
     let duplicatedArr = [];
@@ -16,9 +20,7 @@ const findDuplicated = (arr) => {
             duplicatedArr.push(parseInt(i))
         }
     }
-    console.log(duplicatedArr);
-    console.log(map)
+    return duplicatedArr;
 };
 
-findDuplicated([1,2,3,12,1,2]);
 
