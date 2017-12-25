@@ -1,5 +1,9 @@
-//将数组0移动到数组末尾
-const pushZero = (arr) => {
+/*
+    title: 将数组所有0移动到数组末尾
+    method: k为0的位置，i为非0位置，arr[k] = arr[i]，将arr[i]置为0，遍历到数组末尾
+*/
+
+const pushZero = arr => {
 	let k = 0;
 	while(arr[k] !== 0) {
 		k++;
@@ -15,5 +19,3 @@ const pushZero = (arr) => {
 	}
 	return arr;
 }
-
-console.log(pushZero([1, 0, 3, 4, 0, 0, 9]))

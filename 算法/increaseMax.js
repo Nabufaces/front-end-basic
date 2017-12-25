@@ -2,7 +2,7 @@
     title: 找出数组max(arr[j]-arr[i]), j > i
 */
 
-const increaseMax = (arr) => {
+const increaseMax = arr => {
     if(arr.length < 2) {
         return;
     }
