@@ -1,3 +1,7 @@
+/*
+    title: 深拷贝
+*/
+
 const typeOf = data => {
     const toString = Object.prototype.toString;
     const map = {
@@ -27,7 +31,9 @@ const deepCopy = obj => {
     } else if(type === 'object') {
         o = {};
         for(let i in obj) {
-            o[i] = deepCopy(obj[i])
+            if(obj.hasOwnProperty(i)) {
+                o[i] = deepCopy(obj[i])
+            }
         }
         return o;
     } else {

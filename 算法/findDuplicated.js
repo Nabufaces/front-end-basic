@@ -2,7 +2,7 @@
     title: 找出数组重复元素
 */
 
-const findDuplicated = (arr) => {
+const findDuplicated = arr => {
     if(!arr || arr.length < 2) {
         return [];
     }
