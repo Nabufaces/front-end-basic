@@ -31,3 +31,10 @@ function h() {
     function g() {}
 }
 h();
+
+(function () {
+    var i = j = 5;
+})();
+console.log(i);  //undefined i为函数的局部变量
+console.log(j);  //5 j为全局变量
+
