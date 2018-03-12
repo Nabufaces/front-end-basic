@@ -1,9 +1,10 @@
 ### bind实现
-```javascript 1.8
+```javascript
     Function.prototype._$bind = function (scope) {
-        var self = this;
+        var ctx = this;
+        var args = Array.prototype.slice.apply(arguments, [1]);
         return function() {
-            return self.apply(scope, arguments);
+            return ctx.apply(scope, args);
         }
     };
 ```

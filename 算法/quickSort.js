@@ -7,7 +7,7 @@ const quickSort = arr => {
     const index = Math.floor(arr.length / 2);
     const item_index = arr.splice(index, 1)[0];
 
-    arr.forEach((item) => {
+    arr.forEach(item => {
         if(item < item_index) {
             left.push(item)
         } else {
